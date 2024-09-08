@@ -1,27 +1,37 @@
-// src/App.js
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import { ThemeProvider } from '@mui/material/styles';
-import Home from './pages/Home';
-import About from './pages/About';
-import Contact from './pages/Contact';
-import Header from './components/Header';
-import Footer from './components/Footer';
-import theme from './theme';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; // Import Router, Routes, and Route
+import Header from './Header';
+import HeroSection from './HeroSection';
+import FeaturedPosts from './FeaturedPosts';
+import CategoriesSection from './CategoriesSection';
+import AboutSection from './AboutSection';
+import NewsletterSignup from './NewsletterSignup';
+import TestimonialsSection from './TestimonialsSection';
+import Footer from './Footer';
+import PostDetail from './PostDetail'; // Import the PostDetail component
 
 const App = () => {
   return (
-    <ThemeProvider theme={theme}>
-      <Router>
-        <Header /> {/* This should contain the AppBar */}
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-        </Routes>
-        <Footer />
-      </Router>
-    </ThemeProvider>
+    <Router>
+      <Header />
+      <Routes>
+        {/* Main Landing Page */}
+        <Route path="/" element={
+          <>
+            <HeroSection />
+            <FeaturedPosts />
+            <CategoriesSection />
+            <AboutSection />
+            <NewsletterSignup />
+            <TestimonialsSection />
+            <Footer />
+          </>
+        } />
+        
+        {/* Detailed Page for Each Post */}
+        <Route path="/post/:id" element={<PostDetail />} />
+      </Routes>
+    </Router>
   );
 };
 
