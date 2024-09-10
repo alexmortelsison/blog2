@@ -15,7 +15,6 @@ const App = () => {
     <Router>
       <Header />
       <Routes>
-        {/* Main Landing Page */}
         <Route path="/" element={
           <>
             <HeroSection />
@@ -28,7 +27,6 @@ const App = () => {
           </>
         } />
         
-        {/* Detailed Page for Each Post */}
         <Route path="/post/:id" element={<PostDetail />} />
       </Routes>
     </Router>
