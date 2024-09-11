@@ -20,7 +20,7 @@ const Header = () => {
   return (
     <ThemeProvider theme={darkTheme}>
       <AppBar sx={{ mb: 4 }}>
-        <Toolbar sx={{ display: 'flex', justifyContent: 'space-between' }}>
+        <Toolbar  sx={{ flexDirection: { xs: 'column', sm: 'row' }, justifyContent:'space-between'}}>
           <Typography variant="h6" sx={{ flexGrow: 1 }}>
             Tech Blogs
           </Typography>

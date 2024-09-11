@@ -55,7 +55,7 @@ const CategoriesSection = () => {
         <Grid container spacing={4}>
           {categories.map((category, index) => (
             <Grid item xs={12} sm={6} md={3} key={index}>
-              <Card sx={{backgroundColor: '#1e1e1e' }}>
+              <Card sx={{ display: 'flex', flexDirection: 'column', backgroundColor: '#1e1e1e' }}>
                 <CardMedia
                   component="img"
                   image={category.image}
@@ -63,7 +63,7 @@ const CategoriesSection = () => {
                   sx={{ height: 140 }}
                 />
                 <CardContent>
-                  <Typography>{category.title}</Typography>
+                  <Typography variant="h4">{category.title}</Typography>
                 </CardContent>
               </Card>
             </Grid>
